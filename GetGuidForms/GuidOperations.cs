@@ -8,12 +8,12 @@ namespace GetGuidForms
     {
         public static string GuidGenerator()
         {
-            Guid g = Guid.NewGuid();
-            Thread thread = new Thread(() => Clipboard.SetText(g.ToString()));
+            string g = Guid.NewGuid().ToString();
+            Thread thread = new Thread(() => Clipboard.SetText(g));
             thread.SetApartmentState(ApartmentState.STA); //Set the thread to STA
             thread.Start();
             thread.Join();
-            return g.ToString();
+            return g;
         }
     }
 }
