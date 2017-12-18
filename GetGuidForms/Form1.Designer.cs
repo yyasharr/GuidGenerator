@@ -70,7 +70,7 @@
             this.label1.Size = new System.Drawing.Size(279, 63);
             this.label1.TabIndex = 1;
             this.label1.Text = "You can get a new Guid by clicking the\nbelow button or double clicking the\ntray i" +
-    "con.";
+    "con. Guid is copied to clipboard.";
             // 
             // button1
             // 
