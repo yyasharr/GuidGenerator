@@ -13,10 +13,14 @@ namespace GetGuidForms
 
         private void getGuidNotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            string guid=GuidOperations.GuidGenerator();
+            string guid=string.Empty;
             if (UpperCaseCheckBox.Checked)
             {
-                guid = guid.ToUpper();
+                guid = GuidOperations.GuidGenerator(true);
+            }
+            else
+            {
+                guid = GuidOperations.GuidGenerator(false);
             }
             textBox1.AppendText(guid);
             textBox1.AppendText(Environment.NewLine);
@@ -30,12 +34,16 @@ namespace GetGuidForms
         private void button1_Click(object sender, EventArgs e)
         {
             button1.Enabled = false;
-            string guid = GuidOperations.GuidGenerator();
+            string guid = string.Empty;
             if (UpperCaseCheckBox.Checked)
             {
-                guid = guid.ToUpper();
+                guid = GuidOperations.GuidGenerator(true);
             }
-            
+            else
+            {
+                guid = GuidOperations.GuidGenerator(false);
+            }
+
             textBox1.AppendText(guid);
             textBox1.AppendText(Environment.NewLine);
             button1.Enabled = true;
